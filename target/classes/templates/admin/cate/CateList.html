@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+电影类型
+<table border="1">
+    <thead>
+    <tr>
+        <td>序号</td>
+        <td>电影类型</td>
+    </tr>
+    </thead>
+
+    <tbody>
+
+
+     <tr th:each="c:${cates}">
+         <td th:text="${c.id}"></td>
+         <td th:text="${c.name}"></td>
+     </tr>
+    </tbody>
+
+</table>
+<ul class="pagination">
+    <li class="page-item"><a class="page-link"><span th:text="第+${catesByPage.pageNum}+页"></span></a></li>
+    <li class="page-item"><a class="page-link" th:href="@{/cate/findCates}">首页</a></li>
+    <li class="page-item"><a class="page-link" th:href="@{/cate/findCates(pageNum=${catesByPage.getPrePage()})}">上一页</a></li>
+    <li class="page-item"><a class="page-link" th:href="@{/cate/findCates(pageNum=${catesByPage.getNextPage()})}">下一页</a></li>
+</ul>
+
+</body>
+</html>

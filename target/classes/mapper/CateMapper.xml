@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.cn.dao.CateDao">
+    <resultMap id="BaseResultMap" type="com.cn.model.Cate">
+        <id column="id" jdbcType="INTEGER" property="id"></id>
+        <result column="name" jdbcType="VARCHAR" property="name"></result>
+    </resultMap>
+
+    <select id="findCates" resultMap="BaseResultMap">
+        select id,name from cate
+    </select>
+
+   <insert id="addCate">
+       insert into cate(name) values(#{name})
+   </insert>
+
+
+
+
+
+</mapper>
